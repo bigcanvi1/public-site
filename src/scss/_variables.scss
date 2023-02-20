@@ -1,0 +1,32 @@
+/*
+ *  Configuration variables for this site go here
+ */
+
+$white: #fff;
+$black: #0c1228;
+$color-primary-dark: #11132c;
+
+/*
+ *  GRID
+ *
+ */
+
+$master-col-width: 7%;
+$master-gutter-width: 16% / 11%;
+
+// provides a fallback for font-size()
+$base-font-size: 14.5;
+
+$widthIpad: 973px;
+
+$widthTablet: 1261px;
+
+$widthDesktop: 1091px;
+
+$max-width: 1440px;
+
+$grid-columns: 12;
+$grid-gutter-width: 16px;
+
+// don't generate the bootstrap grid classes - use the mixins!
+$enable-grid-classes: false;

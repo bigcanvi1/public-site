@@ -1,0 +1,66 @@
+@import 'variables';
+
+@mixin section-bottom-spacing {
+    margin-bottom: $base-font-size * 2px;
+}
+
+@function getwidth($cols, $gutters) {
+    @return ($cols * $master-col-width + $gutters * $master-gutter-width);
+}
+
+@mixin mobile {
+    @media (max-width: #{$widthTablet - 1px}) {
+        @content;
+    }
+}
+
+@mixin ipad {
+    @media (max-width: #{$widthIpad}) {
+        @content;
+    }
+}
+
+@mixin ipadAndUp {
+    @media (min-width: #{$widthIpad}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$widthTablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$widthDesktop}) {
+        @content;
+    }
+}
+
+@mixin extended-grid() {
+    position: relative;
+
+    &.flex-start {
+        display: flex;
+        justify-content: flex-start;
+
+        & > :not(:last-child) {
+            margin-right: 16px;
+        }
+    }
+
+    &.centered {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &.collapse-mobile {
+        @include mobile {
+            width: 100% !important;
+        }
+    }
+    &.relative {
+        position: relative;
+    }
+}
