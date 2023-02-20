@@ -2,12 +2,17 @@ import * as React from "react";
 import { NAVIGATION } from "../../../constant";
 import classes from "./Header.module.scss";
 import Link from "next/link";
+import Image from "next/image";
 
 export const Header: React.FunctionComponent = () => {
     return (
-        <header>
+        <header className={classes.Header}>
             <div className={`col-12 centered collapse-mobile ${classes.MastHead}`}>
-                <div className="logo">Logo</div>
+                <div className={classes.Logo}>
+                    <Link href="/">
+                        <Image src="/vercel.svg" alt="Logo" width={100} height={43} />
+                    </Link>
+                </div>
 
                 <nav className={classes.Nav}>
                     <ul>

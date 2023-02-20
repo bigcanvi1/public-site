@@ -1,0 +1,42 @@
+@import "../../../scss/_layout-mixins";
+
+.HeroSection {
+    background-color: $color-primary-light;
+    width: 100%;
+    padding-bottom: 92px;
+    padding-top: 72px;
+}
+.HeroSectionImage {
+    max-width: 100%;
+}
+
+.HeroTexts {
+    text-align: center;
+    margin-top: -40px;
+
+    h1 {
+        font-size: 72px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: $grey-text;
+        line-height: 130%;
+
+        span {
+            color: $color-primary;
+        }
+    }
+
+    p {
+        color: $color-primary-dark;
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: 0.02em;
+    }
+}
+
+.CTA {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 32px;
+}

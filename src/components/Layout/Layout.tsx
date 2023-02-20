@@ -12,7 +12,7 @@ export const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
         <main className={classes.Main}>
             <Header />
 
-            <div className="col-12 centered collapse-mobile">{children}</div>
+            {children}
 
             <Footer />
         </main>

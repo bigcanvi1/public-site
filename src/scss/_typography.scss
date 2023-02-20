@@ -142,3 +142,16 @@ a {
 .fw-600 {
     font-weight: 600;
 }
+
+.btn {
+    border-radius: 8px;
+    padding: 8px 22px;
+    border: none;
+    outline: none;
+    min-height: 40px;
+}
+
+.btn-primary {
+    background-color: $color-primary;
+    color: $white;
+}

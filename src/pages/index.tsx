@@ -1,7 +1,7 @@
-import { Layout } from "../components";
+import { HomePage } from "../components";
 
 const Homepage = () => {
-    return <Layout>Hellows</Layout>;
+    return <HomePage />;
 };
 
 export default Homepage;
