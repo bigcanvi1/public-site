@@ -1,0 +1,31 @@
+@import "../../../scss/_layout-mixins";
+
+.Steps {
+    padding: 93px 0;
+
+    &__Items {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 104px;
+    }
+}
+
+.Quote {
+    color: $grey-text;
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 130%;
+    text-align: center;
+
+    &__Author {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        text-align: center;
+        color: $color-primary-dark;
+        letter-spacing: 0.02em;
+        margin-top: 16px;
+    }
+}
