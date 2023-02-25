@@ -1,0 +1,33 @@
+@import "../../../../scss/_layout-mixins";
+
+.ReviewItem {
+    border: 1px solid $color-primary;
+    border-radius: 32px;
+    width: 316px;
+    padding: 32px;
+
+    &:not(:last-child) {
+        margin-right: 32px;
+    }
+
+    &__Stars {
+        margin-bottom: 16px;
+        font-size: 28px;
+        color: $color-primary;
+    }
+
+    &__Text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: $color-primary-dark;
+        margin-bottom: 32px;
+    }
+
+    &__Author {
+        font-size: 16px;
+        line-height: 150%;
+        color: $grey-text;
+        font-weight: 400;
+    }
+}

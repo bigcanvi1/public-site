@@ -3,16 +3,16 @@
 .HeroSection {
     background-color: $color-primary-light;
     width: 100%;
-    padding-bottom: 92px;
-    padding-top: 72px;
+    padding: 100px 0 92px 0;
 }
 .HeroSectionImage {
     max-width: 100%;
+    display: flex;
+    margin: 0 auto;
 }
 
 .HeroTexts {
     text-align: center;
-    margin-top: -40px;
 
     h1 {
         font-size: 72px;

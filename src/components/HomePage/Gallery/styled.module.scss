@@ -1,0 +1,15 @@
+@import "../../../scss/_layout-mixins";
+
+.Gallery {
+}
+
+.CTA {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+.MansoryLayout {
+    height: 100px;
+    background-color: rgba(255, 0, 0, 0.1);
+}
