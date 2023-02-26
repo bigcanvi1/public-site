@@ -4,6 +4,11 @@
     background-color: $color-primary-light;
     width: 100%;
     padding: 100px 0 92px 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .HeroSectionImage {
     max-width: 100%;

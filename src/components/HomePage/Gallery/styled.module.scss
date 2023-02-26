@@ -10,6 +10,12 @@
     margin-top: 80px;
 }
 .MansoryLayout {
-    height: 100px;
-    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.MasonryItem {
+    img {
+        max-width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+    }
 }

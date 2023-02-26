@@ -10,3 +10,27 @@
 @import "layout-mixins";
 @import "grid";
 @import "typography";
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+.reviews {
+    .swiper-slide {
+        width: 316px;
+        &:not(:last-child) {
+            margin-right: 32px;
+        }
+    }
+}
+.swiper-wrapper {
+    padding-bottom: 60px;
+}
+.swiper-pagination {
+    .swiper-pagination-bullet {
+        background: $grey-text;
+    }
+    .swiper-pagination-bullet-active {
+        background: $color-primary;
+    }
+}

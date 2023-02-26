@@ -11,15 +11,15 @@ export const NAVIGATION = [
         label: "Home",
     },
     {
-        path: UI_ROUTES.ABOUT,
-        label: "About",
-    },
-    {
         path: UI_ROUTES.GALLERY,
         label: "Gallery",
     },
     {
+        path: UI_ROUTES.ABOUT,
+        label: "About",
+    },
+    {
         path: UI_ROUTES.CONTACT,
-        label: "Contact",
+        label: "Book",
     },
 ];
