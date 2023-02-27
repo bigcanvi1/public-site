@@ -1,0 +1,15 @@
+@import "../../../scss/_layout-mixins";
+
+.BookingForm {
+    background-color: $white;
+    width: 660px;
+    height: 733px;
+    border-radius: 32px;
+    margin-top: -120px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+    color: $grey-text;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

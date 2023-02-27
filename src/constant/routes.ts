@@ -2,7 +2,7 @@ export const UI_ROUTES = {
     HOME: "/",
     ABOUT: "/about",
     GALLERY: "/gallery",
-    CONTACT: "/contact",
+    BOOK: "/book",
 };
 
 export const NAVIGATION = [
@@ -19,7 +19,7 @@ export const NAVIGATION = [
         label: "About",
     },
     {
-        path: UI_ROUTES.CONTACT,
+        path: UI_ROUTES.BOOK,
         label: "Book",
     },
 ];

@@ -1,6 +1,8 @@
 import * as React from "react";
 import Image from "next/image";
 import classes from "./HeroSection.module.scss";
+import Link from "next/link";
+import { UI_ROUTES } from "@/constant";
 
 export interface HeroSectionProps {}
 
@@ -19,7 +21,9 @@ export const HeroSection: React.FunctionComponent<HeroSectionProps> = () => {
                 <p>Book your photoshoots with us.</p>
             </div>
             <div className={classes.CTA}>
-                <button className={"btn btn-primary"}>Book Now</button>
+                <Link href={UI_ROUTES.BOOK} className={"btn btn-primary"}>
+                    Book Now
+                </Link>
             </div>
         </div>
     );

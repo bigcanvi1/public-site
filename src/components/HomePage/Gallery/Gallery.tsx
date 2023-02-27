@@ -3,6 +3,8 @@ import * as React from "react";
 import classes from "./styled.module.scss";
 import isEmpty from "lodash/isEmpty";
 import { GalleryImages, GalleryImagesProps } from "../../Gallery/GalleryImages";
+import Link from "next/link";
+import { UI_ROUTES } from "@/constant";
 
 export interface GalleryProps extends GalleryImagesProps {}
 
@@ -16,7 +18,9 @@ export const Gallery: React.FunctionComponent<GalleryProps> = ({ galleries }) =>
             {/* <div className={classes.Gallery}> */}
             <GalleryImages galleries={filteredGalleries} />
             <div className={classes.CTA}>
-                <button className="btn btn-secondary">View Gallery</button>
+                <Link href={UI_ROUTES.GALLERY} className="btn btn-secondary">
+                    View Gallery
+                </Link>
             </div>
             {/* </div> */}
         </div>

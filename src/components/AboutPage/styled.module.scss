@@ -1,0 +1,26 @@
+@import "../../scss/_layout-mixins";
+.About {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 0 0 100px 0;
+}
+
+.AboutText {
+    max-width: 732px;
+    h2 {
+        font-weight: 800;
+        font-size: 60px;
+        line-height: 130%;
+        color: $grey-text;
+    }
+
+    p {
+        margin-top: 16px;
+        color: $color-primary-dark;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+    }
+}

@@ -5,4 +5,7 @@
     overflow-x: hidden;
     height: 100% !important;
     scroll-behavior: smooth;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }

@@ -1,0 +1,21 @@
+@import "../../scss/_layout-mixins";
+
+.PageHero {
+    min-height: 372px;
+    background-color: $color-primary-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("/images/hero-bg.png");
+    background-repeat: no-repeat;
+    background-position: right 10px;
+    margin-bottom: 82px;
+
+    h1 {
+        font-weight: 700;
+        font-size: 72px;
+        line-height: 130%;
+        color: $color-primary;
+        margin-top: 100px;
+    }
+}

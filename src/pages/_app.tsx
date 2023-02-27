@@ -1,11 +1,36 @@
+import * as React from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { Manrope } from "@next/font/google";
-const font = Manrope({ subsets: ["latin"] });
+import Router from "next/router";
+import { PageLoader } from "../components/PageLoader";
 
 import "../scss/master.scss";
 
+const font = Manrope({ subsets: ["latin"] });
+
 export default function App({ Component, pageProps }: AppProps) {
+    const [loading, setLoading] = React.useState(false);
+
+    React.useEffect(() => {
+        const start = () => {
+            setLoading(true);
+        };
+        const end = () => {
+            setLoading(false);
+        };
+
+        Router.events.on("routeChangeStart", start);
+        Router.events.on("routeChangeComplete", end);
+        Router.events.on("routeChangeError", end);
+
+        return () => {
+            Router.events.off("routeChangeStart", start);
+            Router.events.off("routeChangeComplete", end);
+            Router.events.off("routeChangeError", end);
+        };
+    }, []);
+
     return (
         <>
             <Head>
@@ -14,7 +39,9 @@ export default function App({ Component, pageProps }: AppProps) {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className={font.className}>
+
+            {loading && <PageLoader />}
+            <div className={`${font.className} app-wrapper`}>
                 <Component {...pageProps} />
             </div>
         </>
