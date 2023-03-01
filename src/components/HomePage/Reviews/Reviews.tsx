@@ -11,7 +11,7 @@ export interface ReviewsProps {}
 
 export const Reviews: React.FunctionComponent<ReviewsProps> = () => {
     return (
-        <div className="col-12 centered collapse-mobile reviews">
+        <div className="col-12 centered collapse-mobile reviews overflow-visible">
             {/* <div className={classes.Reviews}> */}
             <Swiper
                 slidesPerView={"auto"}

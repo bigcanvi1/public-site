@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/font": "13.1.6",
+    "@nextui-org/react": "1.0.0-beta.12",
     "@types/lodash": "^4.14.191",
     "@types/node": "18.14.0",
     "@types/react": "18.0.28",

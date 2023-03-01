@@ -4,6 +4,7 @@ import Head from "next/head";
 import { Manrope } from "@next/font/google";
 import Router from "next/router";
 import { PageLoader } from "../components/PageLoader";
+import { NextUIProvider } from "@nextui-org/react";
 
 import "../scss/master.scss";
 
@@ -42,7 +43,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
             {loading && <PageLoader />}
             <div className={`${font.className} app-wrapper`}>
-                <Component {...pageProps} />
+                <NextUIProvider>
+                    <Component {...pageProps} />
+                </NextUIProvider>
             </div>
         </>
     );

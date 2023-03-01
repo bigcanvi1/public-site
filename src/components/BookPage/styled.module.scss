@@ -1,12 +1,25 @@
 .BookHero {
     background-image: none;
 }
+.BookWrapper {
+    position: relative;
 
+    @media screen and (max-height: 900px) {
+        overflow: hidden;
+    }
+}
 .BookHeroImage {
     position: absolute;
-
+    top: 0;
     right: 0;
     img {
         width: 100%;
     }
+}
+
+.StyledWrapper {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-end;
+    justify-content: space-between;
 }

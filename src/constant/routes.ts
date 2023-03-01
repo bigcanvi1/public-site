@@ -23,3 +23,8 @@ export const NAVIGATION = [
         label: "Book",
     },
 ];
+
+export const COMMON_EXTERNAL_LINK_PROPS = {
+    target: "_blank",
+    rel: "noopener noreferrer",
+};

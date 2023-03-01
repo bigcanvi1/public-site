@@ -6,7 +6,7 @@ export const GALLERY_GQL = gql`
             id
             entry {
                 id
-                url
+                url(transformation: { image: { resize: { fit: clip, width: 400 } } })
             }
             alt
         }
