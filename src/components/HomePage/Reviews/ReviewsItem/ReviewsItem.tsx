@@ -9,7 +9,7 @@ export const ReviewsItem: React.FunctionComponent<ReviewsItemProps> = () => {
         <div className={classes.ReviewItem}>
             {/* check for rating > 5 */}
             <div className={classes.ReviewItem__Stars}>{rating(5)}</div>
-            <p className={classes.ReviewItem__Text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos quis voluptates maxime eligendi vel pariatur minus. Ratione cumque nemo dolores velit enim aut. Hic earum fugiat aut eligendi exercitationem aliquid.</p>
+            <p className={classes.ReviewItem__Text}>I love this software. I&apos;m a software engineer, and I&apos;m interested in applyin.</p>
             <div className={classes.ReviewItem__Author}>Lorem Ipsum</div>
         </div>
     );

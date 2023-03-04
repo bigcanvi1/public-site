@@ -1,9 +1,25 @@
 @import "../../../scss/_layout-mixins";
 
 .Footer {
-    background-color: $color-primary-dark;
     width: 100%;
     padding: 20px 10px;
-    color: #fff;
     margin-top: auto;
+    border-top: 1px solid $grey1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+        color: $grey2;
+    }
+}
+
+.Contacts {
+    display: flex;
+    align-items: center;
+
+    a {
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
 }

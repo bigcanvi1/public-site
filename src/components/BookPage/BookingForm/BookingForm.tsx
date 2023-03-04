@@ -7,7 +7,7 @@ export interface BookingFormProps {}
 
 export const BookingForm: React.FunctionComponent<BookingFormProps> = () => {
     return (
-        <div className={classes.BookingForm}>
+        <>
             <div className={classes.FormWrapper}>
                 <TextField />
                 <Spacer y={2.5} />
@@ -19,6 +19,6 @@ export const BookingForm: React.FunctionComponent<BookingFormProps> = () => {
                 <button className="btn btn-primary">Book</button>
                 <button className="btn btn-secondary">Cancel</button>
             </div>
-        </div>
+        </>
     );
 };

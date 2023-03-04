@@ -1,20 +1,20 @@
 import * as React from "react";
 import { Header } from "./Header";
-import { Footer } from "./Footer";
+import { Footer, FooterProps } from "./Footer";
 import classes from "./Layout.module.scss";
 
-interface LayoutProps {
-    children: React.ReactNode;
+export interface LayoutProps extends FooterProps {
+    children?: React.ReactNode;
 }
 
-export const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
+export const Layout: React.FunctionComponent<LayoutProps> = ({ children, contacts }) => {
     return (
         <main className={classes.Main}>
             <Header />
 
             {children}
 
-            <Footer />
+            <Footer contacts={contacts} />
         </main>
     );
 };

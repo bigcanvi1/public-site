@@ -1,27 +1,19 @@
 import * as React from "react";
-import { Layout } from "../Layout";
+import { Layout, LayoutProps } from "../Layout";
 import { PageHero } from "../PageHero";
 import classes from "./styled.module.scss";
 import { BookingForm } from "./BookingForm";
-import { Contact, ContactProps } from "./Contact";
 
-export interface BookPageProps extends ContactProps {}
+export interface BookPageProps extends LayoutProps {}
 
 export const BookPage: React.FunctionComponent<BookPageProps> = ({ contacts }) => {
     return (
-        <Layout>
+        <Layout contacts={contacts}>
             <div className={classes.BookWrapper}>
-                <PageHero title="Booking" className={classes.BookHero} />
+                <PageHero title="Booking" />
 
-                <div className={classes.BookHeroImage}>
-                    {/*  eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/images/book-hero.png" alt="Book" />
-                </div>
-                <div className="col-12 centered collapse-mobile">
-                    <div className={classes.StyledWrapper}>
-                        <BookingForm />
-                        <Contact contacts={contacts} />
-                    </div>
+                <div className="col-5 centered collapse-mobile">
+                    <BookingForm />
                 </div>
             </div>
         </Layout>

@@ -7,7 +7,7 @@
     left: 0;
     z-index: 100;
     // glassmorphism styles
-    background-color: rgba($color-primary-light, 0.7);
+    background-color: $black;
     backdrop-filter: blur(7px);
 }
 
@@ -31,13 +31,13 @@
 
             a {
                 padding: 10px 0;
-                color: $color-primary-dark;
+                color: $white;
                 font-weight: 700;
                 font-size: 16px;
                 transition: all 0.3s ease-out;
 
                 &:hover {
-                    color: $color-primary;
+                    color: $color-primary-dark;
                 }
             }
         }
