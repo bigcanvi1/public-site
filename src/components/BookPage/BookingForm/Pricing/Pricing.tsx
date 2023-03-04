@@ -13,6 +13,7 @@ export const Pricing: React.FunctionComponent<PricingProps> = () => {
                         key={`${item.type}
                 -index`}
                         {...item}
+                        value={PRICING_ITEMS[1].type}
                     />
                 );
             })}

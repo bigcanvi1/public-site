@@ -76,12 +76,19 @@
         }
     }
 
-    .PricingItem__Checked {
+    &__Checked {
         border-color: $color-primary-dark;
 
-        &::before {
-            opacity: 1;
-            visibility: visible;
+        & .PricingItem__Check {
+            border-color: $color-primary-dark;
+            &::before {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        .PricingItem__Header {
+            border-color: $color-primary-dark;
         }
     }
 

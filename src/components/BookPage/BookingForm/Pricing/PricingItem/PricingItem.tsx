@@ -6,18 +6,19 @@ export interface PricingItemProps {
     type: string;
     price: number;
     perks: Array<string>;
+    value?: string;
 }
 
-export const PricingItem: React.FunctionComponent<PricingItemProps> = ({ type, price, perks }) => {
-    const isChecked = false;
+export const PricingItem: React.FunctionComponent<PricingItemProps> = ({ type, price, perks, value }) => {
+    const isChecked = value === type;
 
     return (
-        <div className={classes.PricingItem}>
+        <div className={[classes.PricingItem, isChecked ? classes.PricingItem__Checked : ""].join(" ")}>
             <div className={classes.PricingItem__Header}>
                 <div>
                     <Pricing /> <p>{type}</p>
                 </div>
-                <div className={[classes.PricingItem__Check, isChecked ? classes.PricingItem__Checked : ""].join(" ")}>&nbsp;</div>
+                <div className={classes.PricingItem__Check}>&nbsp;</div>
             </div>
 
             <div className={classes.PricingItem__Desc}>
