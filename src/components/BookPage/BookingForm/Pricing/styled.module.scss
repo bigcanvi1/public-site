@@ -1,0 +1,99 @@
+@import "../../../../scss/_layout-mixins";
+
+.Pricing {
+    display: flex;
+    & > :not(:last-child) {
+        margin-right: 32px;
+    }
+}
+
+.PricingItem {
+    border: 1px solid #eaecf0;
+    border-radius: 8px;
+    width: 100%;
+
+    &__Header {
+        padding: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #eaecf0;
+        div {
+            display: flex;
+            align-items: center;
+
+            p {
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 28px;
+                margin-left: 16px;
+                color: #344054;
+            }
+        }
+    }
+
+    &__Desc {
+        padding: 16px;
+
+        &_Price {
+            font-weight: 500;
+            font-size: 36px;
+            color: #344054;
+            margin-bottom: 16px;
+        }
+        &_Perks {
+            font-size: 14px;
+            line-height: 24px;
+            color: #667085;
+            margin-bottom: 16px;
+
+            & p:not(:last-child) {
+                margin-bottom: 2px;
+            }
+        }
+    }
+
+    &__Check {
+        border: 1px solid #d0d5dd;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: relative;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 11px;
+            height: 11px;
+            background-color: $color-primary-dark;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    .PricingItem__Checked {
+        border-color: $color-primary-dark;
+
+        &::before {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+        border-color: $color-primary-dark;
+
+        .PricingItem__Check,
+        .PricingItem__Header {
+            border-color: $color-primary-dark;
+        }
+    }
+}

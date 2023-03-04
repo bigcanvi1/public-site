@@ -12,7 +12,7 @@ export const BookPage: React.FunctionComponent<BookPageProps> = ({ contacts }) =
             <div className={classes.BookWrapper}>
                 <PageHero title="Booking" />
 
-                <div className="col-5 centered collapse-mobile">
+                <div className="col-6 centered collapse-mobile">
                     <BookingForm />
                 </div>
             </div>
