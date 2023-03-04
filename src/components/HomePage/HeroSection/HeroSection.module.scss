@@ -28,12 +28,15 @@
     flex-direction: column;
     justify-content: flex-end;
     margin-bottom: 8%;
+    background-image: url("/images/home-hero.png");
+    background-repeat: no-repeat;
+    background-position: left 65%;
 
     h1 {
         font-size: 72px;
         font-weight: 700;
         margin-bottom: 20px;
-        color: $grey-text;
+        color: #eae2d4;
         line-height: 130%;
 
         span {
