@@ -1,23 +1,33 @@
 @import "../../../scss/_layout-mixins";
 
 .HeroSection {
-    background-color: $color-primary-light;
     width: 100%;
-    padding: 100px 0 92px 0;
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-flow: row wrap;
+    background-color: #1e1f27;
 }
 .HeroSectionImage {
-    max-width: 100%;
+    flex: 1.2;
+    background-color: #f3f3f3;
     display: flex;
-    margin: 0 auto;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    img {
+        max-width: 100%;
+        object-fit: cover;
+    }
 }
 
 .HeroTexts {
-    text-align: center;
+    flex: 2;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 8%;
 
     h1 {
         font-size: 72px;
@@ -32,7 +42,7 @@
     }
 
     p {
-        color: $color-primary-dark;
+        color: $white;
         font-weight: 400;
         font-size: 16px;
         letter-spacing: 0.02em;
@@ -41,7 +51,11 @@
 
 .CTA {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 32px;
+    margin-top: 16px;
+
+    a {
+        &:not(:last-child) {
+            margin-right: 16px;
+        }
+    }
 }

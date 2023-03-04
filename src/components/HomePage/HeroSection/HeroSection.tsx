@@ -9,21 +9,24 @@ export interface HeroSectionProps {}
 export const HeroSection: React.FunctionComponent<HeroSectionProps> = () => {
     return (
         <div className={classes.HeroSection}>
-            <div className="col-12 centered collapse-mobile">
+            <div className={classes.HeroSectionImage}>
                 {/*  eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/hero.png" alt="hero image" className={classes.HeroSectionImage} />
+                <img src="/images/hero.png" alt="hero image" />
             </div>
 
-            <div className={`col-7 centered collapse-mobile ${classes.HeroTexts}`}>
+            <div className={classes.HeroTexts}>
                 <h1>
                     Your favourite Dublin <span>Photographer</span>
                 </h1>
                 <p>Book your photoshoots with us.</p>
-            </div>
-            <div className={classes.CTA}>
-                <Link href={UI_ROUTES.BOOK} className={"btn btn-primary"}>
-                    Book Now
-                </Link>
+                <div className={classes.CTA}>
+                    <Link href={UI_ROUTES.BOOK} className={"btn btn-primary"}>
+                        Book Now
+                    </Link>
+                    <Link href={UI_ROUTES.GALLERY} className={"btn btn-secondary"}>
+                        View Gallery
+                    </Link>
+                </div>
             </div>
         </div>
     );
