@@ -7,6 +7,7 @@ import { PageLoader } from "../components/PageLoader";
 import { NextUIProvider } from "@nextui-org/react";
 
 import "../scss/master.scss";
+import "react-day-picker/dist/style.css";
 
 const font = Manrope({ subsets: ["latin"] });
 

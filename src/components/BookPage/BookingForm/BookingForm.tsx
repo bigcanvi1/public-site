@@ -2,7 +2,7 @@ import * as React from "react";
 import classes from "./styled.module.scss";
 import { Spacer } from "@nextui-org/react";
 import { TextField } from "./TextField";
-import { DateSelector } from "./DateSelector";
+import { DateAndTimeSelector } from "./DateAndTimeSelector";
 import { Pricing } from "./Pricing";
 
 export interface BookingFormProps {}
@@ -21,7 +21,7 @@ export const BookingForm: React.FunctionComponent<BookingFormProps> = () => {
                 <Spacer y={2.1} />
                 <Pricing />
                 <Spacer y={1.4} />
-                <DateSelector />
+                <DateAndTimeSelector />
             </div>
             <div className={classes.Buttons}>
                 <button className="btn btn-primary">Book Now</button>

@@ -29,11 +29,11 @@ export const TimeSelector: React.FunctionComponent<TimeSelectorProps> = () => {
     const parsedKeys = isFalsey ? disabledKeys : availableTimes;
 
     return (
-        <Dropdown placement="bottom-left" disableAnimation>
+        <Dropdown placement="top-left">
             <Dropdown.Trigger>
                 <TextField label="" placeholder="00:00 PM" contentLeft={<Clock />} value="" aria-labelledby="time" aria-label="time" />
             </Dropdown.Trigger>
-            <Dropdown.Menu aria-label="Select Time" css={{ borderRadius: "8px", boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05)" }} disabledKeys={disabledKeys}>
+            <Dropdown.Menu aria-label="Select Time" css={{ borderRadius: "8px", boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05)", border: "1px solid #EAECF0" }} disabledKeys={disabledKeys}>
                 {
                     parsedKeys.map((time) => {
                         const disabled = time === DISABLED_EMPTY_KEY;

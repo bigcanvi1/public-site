@@ -41,3 +41,56 @@
 .overflow-visible {
     overflow: visible;
 }
+:root {
+    --nextui-shadows-md: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    --nextui-radii-lg: 8px;
+    --nextui-colors-border: #eaecf0;
+}
+
+.DayPicker {
+    .rdp-day,
+    .rdp-button {
+        border-radius: 8px;
+    }
+    .rdp-caption_label {
+        color: $hero-bg;
+    }
+    .rdp-head_cell {
+        color: #c6c6c8;
+    }
+    .rdp-button {
+        svg {
+            path {
+                fill: $hero-bg;
+            }
+        }
+
+        &:hover {
+            background-color: $color-primary-light !important;
+            svg {
+                path {
+                    fill: $color-primary;
+                }
+            }
+        }
+    }
+
+    .rdp-day {
+        color: $hero-bg !important;
+
+        &:hover {
+            background-color: $color-primary-light !important;
+            color: $color-primary !important;
+        }
+
+        &.rdp-day_disabled {
+            color: $grey2 !important;
+        }
+
+        &.rdp-day_selected {
+            background-color: $color-primary-light !important;
+            color: $color-primary !important;
+            font-weight: 700;
+        }
+    }
+}
