@@ -6,14 +6,14 @@ export interface PricingItemProps {
     type: string;
     price: number;
     perks: Array<string>;
-    value?: string;
+    value: string;
+    isChecked?: boolean;
+    handleChange: (e: React.SyntheticEvent<HTMLDivElement>) => void;
 }
 
-export const PricingItem: React.FunctionComponent<PricingItemProps> = ({ type, price, perks, value }) => {
-    const isChecked = value === type;
-
+export const PricingItem: React.FunctionComponent<PricingItemProps> = ({ type, price, perks, isChecked, value, handleChange }) => {
     return (
-        <div className={[classes.PricingItem, isChecked ? classes.PricingItem__Checked : ""].join(" ")}>
+        <div className={[classes.PricingItem, isChecked ? classes.PricingItem__Checked : ""].join(" ")} data-value={value} onClick={handleChange}>
             <div className={classes.PricingItem__Header}>
                 <div>
                     <Pricing /> <p>{type}</p>

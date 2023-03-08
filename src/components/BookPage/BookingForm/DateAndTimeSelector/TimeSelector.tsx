@@ -1,9 +1,12 @@
 import * as React from "react";
 import { TextField } from "../TextField";
 import { Clock } from "@/assets/icons";
-import { Dropdown, Spacer } from "@nextui-org/react";
+import { Dropdown } from "@nextui-org/react";
 import isEmpty from "lodash/isEmpty";
 import { ITEM_CSS, DISABLED_ITEM_CSS } from "./constant";
+import { FIELDS, INITIAL_VALUES } from "../constant";
+import { useField, useFormikContext } from "formik";
+
 export interface TimeSelectorProps {}
 
 const DISABLED_EMPTY_KEY = "disabled-empty-key";
@@ -17,7 +20,10 @@ const TIMES = {
 type CollectionElement<T> = T extends (infer U)[] ? U : never;
 
 export const TimeSelector: React.FunctionComponent<TimeSelectorProps> = () => {
-    const selectedDayValue = null;
+    const [field, _, { setValue }] = useField(FIELDS.booking_time);
+    const { values } = useFormikContext<typeof INITIAL_VALUES>();
+
+    const selectedDayValue = values?.[FIELDS.booking_date];
     // need to get the day from the date selector
     // call api to get days already booked
     // filter out the times that are already booked
@@ -28,12 +34,16 @@ export const TimeSelector: React.FunctionComponent<TimeSelectorProps> = () => {
 
     const parsedKeys = isFalsey ? disabledKeys : availableTimes;
 
+    const handleSelect = (key: React.Key) => {
+        setValue(key, true);
+    };
+
     return (
         <Dropdown placement="top-left">
             <Dropdown.Trigger>
-                <TextField label="" placeholder="00:00 PM" contentLeft={<Clock />} value="" aria-labelledby="time" aria-label="time" />
+                <TextField label="" placeholder="00:00 PM" contentLeft={<Clock />} value={field.value} aria-labelledby="time" aria-label="time" />
             </Dropdown.Trigger>
-            <Dropdown.Menu aria-label="Select Time" css={{ borderRadius: "8px", boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05)", border: "1px solid #EAECF0" }} disabledKeys={disabledKeys}>
+            <Dropdown.Menu aria-label="Select Time" css={{ borderRadius: "8px", boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05)", border: "1px solid #EAECF0" }} disabledKeys={disabledKeys} onAction={handleSelect}>
                 {
                     parsedKeys.map((time) => {
                         const disabled = time === DISABLED_EMPTY_KEY;

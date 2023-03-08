@@ -1,14 +1,21 @@
 import * as React from "react";
 import { Input, InputProps } from "@nextui-org/react";
+import { useField } from "formik";
+import isEmpty from "lodash/isEmpty";
 
 export interface TextFieldProps extends Omit<Partial<InputProps>, "contentLeft" | "bordered" | "fullWidth" | "animated" | "contentLeftStyling"> {
     label: string;
     placeholder: string;
     type?: string;
     contentLeft?: InputProps["contentLeft"];
+    name?: string;
 }
 
-export const TextField = React.forwardRef<TextFieldProps, any>(({ label, placeholder, type, contentLeft, ...rest }, ref) => {
+export const TextField = React.forwardRef<TextFieldProps, any>(({ label, placeholder, type, contentLeft, name, ...rest }, ref) => {
+    const fieldHook = name ? useField : () => [];
+    const [field, meta] = fieldHook(name ?? "");
+    console.log("🚀 ~ file: TextField.tsx:17 ~ TextField ~ meta:", meta);
+
     return (
         <Input
             ref={ref}
@@ -20,6 +27,9 @@ export const TextField = React.forwardRef<TextFieldProps, any>(({ label, placeho
             type={type ?? "text"}
             contentLeft={contentLeft}
             contentLeftStyling={false}
+            helperText={meta?.touched && meta?.error ? meta.error : ""}
+            helperColor="error"
+            {...(field || {})}
             {...rest}
             css={{
                 fontFamily: "inherit",
@@ -37,7 +47,7 @@ export const TextField = React.forwardRef<TextFieldProps, any>(({ label, placeho
                     outline: "none",
                     "& input": {
                         fontSize: "16px",
-
+                        textAlign: "left",
                         paddingLeft: "8px",
                     },
                     borderRadius: "8px",
@@ -50,6 +60,14 @@ export const TextField = React.forwardRef<TextFieldProps, any>(({ label, placeho
                 "& .nextui-input-content--left": {
                     marginTop: "10px",
                     marginLeft: "10px",
+                },
+
+                "& .nextui-input-helper-text-container": {
+                    transform: "translateY(24px)",
+
+                    "& .nextui-input-helper-text": {
+                        fontSize: "14px",
+                    },
                 },
             }}
         />

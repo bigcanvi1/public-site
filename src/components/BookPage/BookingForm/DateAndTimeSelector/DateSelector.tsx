@@ -3,12 +3,16 @@ import { Calendar } from "@/assets/icons";
 import { TextField } from "../TextField";
 import { DayPicker } from "react-day-picker";
 import { Popover } from "@nextui-org/react";
-import { toDate, getMonth, addMonths, startOfMonth } from "date-fns";
+import { addMonths, startOfMonth, formatRelative } from "date-fns";
 import { getDisabledMondaysToThursdays } from "./get-static-diabled-days";
+import { FIELDS } from "../constant";
+import { useField } from "formik";
 
 export interface DateSelectorProps {}
 
 export const DateSelector: React.FunctionComponent<DateSelectorProps> = () => {
+    const [field, _, { setValue }] = useField(FIELDS.booking_date);
+
     const [selected, setSelected] = React.useState<Date>();
     console.log();
     // need to check the data from backend and disable the days that are already booked if all times are booked
@@ -30,6 +34,8 @@ export const DateSelector: React.FunctionComponent<DateSelectorProps> = () => {
 
     const handleSelect = (date?: Date) => {
         setSelected(date);
+        const formatDate = date?.toLocaleDateString("en-GB", { day: "2-digit", month: "2-digit", year: "numeric" });
+        setValue(formatDate, true);
         const timeElement = document.getElementById("date-trigger");
         // click on date element to open dropdown
         timeElement?.click();
@@ -38,7 +44,7 @@ export const DateSelector: React.FunctionComponent<DateSelectorProps> = () => {
     return (
         <Popover>
             <Popover.Trigger>
-                <TextField label="" placeholder="DD / MM / YYYY" contentLeft={<Calendar />} value="" aria-labelledby="date" aria-label="date" id="date-trigger" />
+                <TextField label="" placeholder="DD / MM / YYYY" contentLeft={<Calendar />} value={field.value} aria-labelledby="date" aria-label="date" id="date-trigger" />
             </Popover.Trigger>
 
             <Popover.Content aria-label="Select Time" css={{ borderRadius: "8px", boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05)", border: "1px solid #EAECF0" }}>
