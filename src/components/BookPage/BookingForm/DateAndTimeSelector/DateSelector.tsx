@@ -13,8 +13,6 @@ export interface DateSelectorProps {}
 export const DateSelector: React.FunctionComponent<DateSelectorProps> = () => {
     const [field, _, { setValue }] = useField(FIELDS.booking_date);
 
-    const [selected, setSelected] = React.useState<Date>();
-    console.log();
     // need to check the data from backend and disable the days that are already booked if all times are booked
 
     const disabledDays = [
@@ -33,18 +31,21 @@ export const DateSelector: React.FunctionComponent<DateSelectorProps> = () => {
     const toMonth = addMonths(date, 2);
 
     const handleSelect = (date?: Date) => {
-        setSelected(date);
-        const formatDate = date?.toLocaleDateString("en-GB", { day: "2-digit", month: "2-digit", year: "numeric" });
-        setValue(formatDate, true);
+        setValue(date?.toISOString(), true);
+
         const timeElement = document.getElementById("date-trigger");
         // click on date element to open dropdown
         timeElement?.click();
     };
 
+    const formatDate = field?.value ? new Date(field?.value)?.toLocaleDateString("en-GB", { day: "2-digit", month: "2-digit", year: "numeric" }) : "";
+
+    const selected = field?.value ? new Date(field?.value) : undefined;
+
     return (
         <Popover>
             <Popover.Trigger>
-                <TextField label="" placeholder="DD / MM / YYYY" contentLeft={<Calendar />} value={field.value} aria-labelledby="date" aria-label="date" id="date-trigger" />
+                <TextField label="" placeholder="DD / MM / YYYY" contentLeft={<Calendar />} value={formatDate} aria-labelledby="date" aria-label="date" id="date-trigger" />
             </Popover.Trigger>
 
             <Popover.Content aria-label="Select Time" css={{ borderRadius: "8px", boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05)", border: "1px solid #EAECF0" }}>

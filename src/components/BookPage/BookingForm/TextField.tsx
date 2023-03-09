@@ -14,7 +14,6 @@ export interface TextFieldProps extends Omit<Partial<InputProps>, "contentLeft" 
 export const TextField = React.forwardRef<TextFieldProps, any>(({ label, placeholder, type, contentLeft, name, ...rest }, ref) => {
     const fieldHook = name ? useField : () => [];
     const [field, meta] = fieldHook(name ?? "");
-    console.log("🚀 ~ file: TextField.tsx:17 ~ TextField ~ meta:", meta);
 
     return (
         <Input

@@ -1,5 +1,6 @@
 import * as yup from "yup";
 import { PLANS } from "./Pricing/constant";
+import { IBooking } from "@/types";
 
 const FIELDS = {
     booking_time: "booking_time",
@@ -8,7 +9,7 @@ const FIELDS = {
     last_name: "last_name",
     email: "email",
     plan: "plan",
-};
+} as const;
 
 const SCHEMA = yup.object().shape({
     [FIELDS.booking_time]: yup.string().required("Please select a time"),
@@ -19,12 +20,12 @@ const SCHEMA = yup.object().shape({
     [FIELDS.plan]: yup.string().required("Please select a plan"),
 });
 
-const INITIAL_VALUES = {
+const INITIAL_VALUES: IBooking = {
     [FIELDS.booking_time]: "",
     [FIELDS.booking_date]: "",
-    [FIELDS.first_name]: "",
-    [FIELDS.last_name]: "",
-    [FIELDS.email]: "",
+    [FIELDS.first_name]: "Farouq",
+    [FIELDS.last_name]: "Test",
+    [FIELDS.email]: "ayofef@gmail.com",
     [FIELDS.plan]: PLANS.BASIC,
 };
 

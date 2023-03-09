@@ -4,13 +4,28 @@ import { Spacer } from "@nextui-org/react";
 import { TextField } from "./TextField";
 import { DateAndTimeSelector } from "./DateAndTimeSelector";
 import { Pricing } from "./Pricing";
-import { Formik, Form } from "formik";
+import { Formik, Form, FormikHelpers } from "formik";
 import { FIELDS, SCHEMA, INITIAL_VALUES } from "./constant";
+import { addBookingFn } from "@/utils";
+import { IBooking } from "@/types";
+import { Buttons } from "./Buttons";
 
 export interface BookingFormProps {}
 
 export const BookingForm: React.FunctionComponent<BookingFormProps> = () => {
-    const handleSubmit = () => {};
+    const handleSubmit = async (values: IBooking, actions: FormikHelpers<IBooking>) => {
+        actions.setSubmitting(true);
+        try {
+            const res = await addBookingFn(values);
+            if (res?.statusText?.toLowerCase() === "created") {
+                // show success state
+            }
+        } catch (error) {
+            // TODO: show error message
+        } finally {
+            actions.setSubmitting(false);
+        }
+    };
 
     return (
         <Formik onSubmit={handleSubmit} initialValues={INITIAL_VALUES} validationSchema={SCHEMA} validateOnMount={false} validateOnBlur>
@@ -28,14 +43,7 @@ export const BookingForm: React.FunctionComponent<BookingFormProps> = () => {
                     <Spacer y={1.4} />
                     <DateAndTimeSelector />
                 </div>
-                <div className={classes.Buttons}>
-                    <button className="btn btn-primary" type="submit">
-                        Book Now
-                    </button>
-                    <button className="btn btn-secondary" type="reset">
-                        Cancel
-                    </button>
-                </div>
+                <Buttons />
             </Form>
         </Formik>
     );

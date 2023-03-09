@@ -6,16 +6,10 @@ import isEmpty from "lodash/isEmpty";
 import { ITEM_CSS, DISABLED_ITEM_CSS } from "./constant";
 import { FIELDS, INITIAL_VALUES } from "../constant";
 import { useField, useFormikContext } from "formik";
+import { useGetAllBookings } from "@/hooks";
+import { DISABLED_EMPTY_KEY, TIMES, getDayOfWeek } from "./constant";
 
 export interface TimeSelectorProps {}
-
-const DISABLED_EMPTY_KEY = "disabled-empty-key";
-const TIMES = {
-    // every 2hrs from 5 -9pm with 1hr break
-    FRI: ["5:00 pm", "7:00 pm", "9:00 pm"],
-    // every 2hrs from 9am - 8pm with 1hr break
-    SAT_SUN: ["9:00 am", "11:00 am", "1:00 pm", "3:00 pm", "5:00 pm", "7:00 pm"],
-};
 
 type CollectionElement<T> = T extends (infer U)[] ? U : never;
 
@@ -23,11 +17,15 @@ export const TimeSelector: React.FunctionComponent<TimeSelectorProps> = () => {
     const [field, _, { setValue }] = useField(FIELDS.booking_time);
     const { values } = useFormikContext<typeof INITIAL_VALUES>();
 
+    const { data: bookings } = useGetAllBookings();
+
     const selectedDayValue = values?.[FIELDS.booking_date];
-    // need to get the day from the date selector
-    // call api to get days already booked
-    // filter out the times that are already booked
-    const availableTimes: Array<string> = [...TIMES.SAT_SUN];
+    const bookedTimesForSelectedDay = bookings?.filter((booking) => selectedDayValue?.startsWith(booking?.booking_date))?.map((booking) => booking?.booking_time);
+
+    /// get the day of the week from the date selector
+    const selectedDay = getDayOfWeek(selectedDayValue) as keyof typeof TIMES;
+
+    const availableTimes: Array<string> = TIMES[selectedDay]?.filter((time) => !bookedTimesForSelectedDay?.includes(time));
 
     const isFalsey = isEmpty(selectedDayValue) || isEmpty(availableTimes);
     const disabledKeys = [DISABLED_EMPTY_KEY];
