@@ -23,9 +23,9 @@ const SCHEMA = yup.object().shape({
 const INITIAL_VALUES: IBooking = {
     [FIELDS.booking_time]: "",
     [FIELDS.booking_date]: "",
-    [FIELDS.first_name]: "Farouq",
-    [FIELDS.last_name]: "Test",
-    [FIELDS.email]: "ayofef@gmail.com",
+    [FIELDS.first_name]: "",
+    [FIELDS.last_name]: "",
+    [FIELDS.email]: "",
     [FIELDS.plan]: PLANS.BASIC,
 };
 
