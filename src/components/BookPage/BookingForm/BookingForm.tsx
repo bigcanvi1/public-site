@@ -24,6 +24,7 @@ export const BookingForm: React.FunctionComponent<BookingFormProps> = () => {
             // TODO: show error message
         } finally {
             actions.setSubmitting(false);
+            actions.resetForm();
         }
     };
 
