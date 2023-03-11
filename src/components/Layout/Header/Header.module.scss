@@ -46,6 +46,44 @@
     @include mobile {
         padding-right: 16px;
     }
+
+    @media screen and (max-width: 600px) {
+        position: fixed;
+        top: 0;
+        opacity: 0;
+        visibility: hidden;
+
+        transition: all 0.3s ease-out;
+
+        ul {
+            height: 100vh;
+            width: 100vw;
+            background-color: $hero-bg;
+
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding-left: 18px;
+
+            li {
+                &:not(:last-child) {
+                    margin-right: 0;
+                }
+                &:not(:last-child) {
+                    margin-bottom: 28px;
+                }
+                a {
+                    font-size: 32px;
+                    color: $color-primary;
+                }
+            }
+        }
+
+        &.open {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
 }
 
 .Logo {
@@ -57,5 +95,64 @@
     svg {
         transform: scale(0.4) translate(-200px, -42px);
         // border: 1px solid $color-primary;
+    }
+}
+
+.FacadeButton {
+    border: none;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    margin-right: 8px;
+    z-index: 4000;
+}
+
+.main_navigation__hamburger {
+    display: none;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+}
+
+@include mobile {
+    .main_navigation__hamburger {
+        display: block;
+    }
+    .main_navigation__hamburger,
+    .main_navigation__hamburger::before,
+    .main_navigation__hamburger::after {
+        width: 2.2rem;
+        height: 1.6px;
+        background-color: $color-primary;
+        display: block;
+    }
+    .main_navigation__hamburger::before,
+    .main_navigation__hamburger::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        transition: all 0.2s;
+    }
+    .main_navigation__hamburger::before {
+        top: -0.8rem;
+    }
+    .main_navigation__hamburger::after {
+        top: 0.8rem;
+    }
+    .hamOpen.main_navigation__hamburger {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .hamOpen.main_navigation__hamburger::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+    .hamOpen.main_navigation__hamburger::after {
+        top: 0;
+        transform: rotate(-135deg);
     }
 }

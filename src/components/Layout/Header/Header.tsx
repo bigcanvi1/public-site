@@ -6,6 +6,11 @@ import Image from "next/image";
 import { Logo } from "@/assets/icons";
 
 export const Header: React.FunctionComponent = () => {
+    const [isOpenHamburger, setIsOpenHamBurger] = React.useState(false);
+    const toggleHamburger = () => {
+        setIsOpenHamBurger((prevState) => !prevState);
+    };
+
     return (
         <header className={classes.Header}>
             <div className={`col-12 centered collapse-mobile ${classes.MastHead}`}>
@@ -15,10 +20,16 @@ export const Header: React.FunctionComponent = () => {
                     </Link>
                 </div>
 
-                <nav className={classes.Nav}>
+                <button onClick={toggleHamburger} className={classes.FacadeButton}>
+                    <div role="button" aria-label="menu" className={[classes.main_navigation__hamburger, `${isOpenHamburger ? classes.hamOpen : ""}`].join(" ")}>
+                        &nbsp;
+                    </div>
+                </button>
+
+                <nav className={[classes.Nav, isOpenHamburger ? classes.open : ""].join(" ")}>
                     <ul>
                         {NAVIGATION.map((item) => (
-                            <li key={item.path}>
+                            <li key={item.path} onClick={toggleHamburger}>
                                 <Link href={item.path}>{item.label}</Link>
                             </li>
                         ))}
