@@ -5,6 +5,14 @@
     justify-content: space-between;
 
     margin: 0 0 100px 0;
+
+    @include mobile {
+        padding: 16px;
+    }
+
+    @media screen and (max-width: 720px) {
+        flex-direction: column;
+    }
 }
 
 .AboutText {
@@ -14,13 +22,21 @@
         font-size: 60px;
         line-height: 130%;
         color: $grey-text;
-    }
 
-    p {
-        margin-top: 16px;
-        color: $color-primary-dark;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 150%;
+        @include mobile {
+            font-size: 40px;
+        }
+
+        @media screen and (max-width: 720px) {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.ImgWrapper {
+    flex-shrink: 0;
+    img {
+        width: 100%;
     }
 }

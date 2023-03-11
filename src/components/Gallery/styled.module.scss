@@ -7,3 +7,9 @@
         overflow: hidden;
     }
 }
+
+.MansoryLayout {
+    @include mobile {
+        padding: 0 16px;
+    }
+}

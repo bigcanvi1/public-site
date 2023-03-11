@@ -15,10 +15,9 @@ export const AboutPage: React.FunctionComponent<AboutPageProps> = ({ contacts, i
             <div className="col-12 centered collapse-mobile">
                 <div className={classes.About}>
                     <div className={classes.AboutText}>
-                        <h2>“I am a loyalist! same way I love Nike sneakers and wears, is the same way i tune my vision with a canon lens ”</h2>
-                        <p>Canon Boy</p>
+                        <h2>“With every photograph, I strive to capture the essence of my subject and freeze that moment in time, forever”</h2>
                     </div>
-                    <div>
+                    <div className={classes.ImgWrapper}>
                         <img src={imgUrl} alt="About" />
                     </div>
                 </div>

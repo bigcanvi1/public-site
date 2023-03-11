@@ -42,6 +42,10 @@
             }
         }
     }
+
+    @include mobile {
+        padding-right: 16px;
+    }
 }
 
 .Logo {

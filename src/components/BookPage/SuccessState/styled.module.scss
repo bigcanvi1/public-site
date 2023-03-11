@@ -8,6 +8,10 @@
         width: 100%;
         max-width: 200px;
     }
+
+    @include mobile {
+        padding: 16px;
+    }
 }
 
 .Title {
@@ -16,6 +20,9 @@
     line-height: 32px;
     color: $color-primary;
     text-align: center;
+    @include mobile {
+        padding: 16px;
+    }
 }
 
 .Subtitle {
@@ -25,6 +32,9 @@
     color: $hero-bg;
     text-align: center;
     margin-top: 22px;
+    @include mobile {
+        padding: 16px;
+    }
 }
 
 .VerifyWrapper {
@@ -33,6 +43,9 @@
     padding: 36px 40px;
     margin-top: 38px;
     margin-bottom: 55px;
+    max-width: 300px;
+    margin-right: auto;
+    margin-left: auto;
 
     p {
         font-weight: 700;
@@ -41,6 +54,10 @@
         text-align: center;
         color: $hero-bg;
         letter-spacing: 0.01em;
+
+        &:first-child {
+            margin-bottom: 13px;
+        }
     }
 }
 

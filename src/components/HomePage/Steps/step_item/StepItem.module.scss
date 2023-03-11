@@ -5,6 +5,10 @@
     padding: 32px 0;
     width: getwidth(3, 2);
 
+    @include mobile {
+        min-width: 300px;
+    }
+
     svg {
         path {
             stroke: $color-primary-dark;
