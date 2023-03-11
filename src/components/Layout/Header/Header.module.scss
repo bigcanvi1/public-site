@@ -119,7 +119,7 @@
     cursor: pointer;
 }
 
-@include mobile {
+@media screen and (max-width: 600px) {
     .main_navigation__hamburger {
         display: block;
     }
