@@ -6,3 +6,4 @@ export * from "./ContactIcons";
 export * from "./Clock";
 export * from "./Calendar";
 export * from "./Pricing";
+export * from "./Logo";

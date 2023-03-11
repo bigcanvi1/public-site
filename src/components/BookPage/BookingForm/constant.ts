@@ -26,7 +26,7 @@ const INITIAL_VALUES: IBooking = {
     [FIELDS.first_name]: "",
     [FIELDS.last_name]: "",
     [FIELDS.email]: "",
-    [FIELDS.plan]: PLANS.BASIC,
+    [FIELDS.plan]: PLANS.PREMIUM,
 };
 
 export { FIELDS, SCHEMA, INITIAL_VALUES };

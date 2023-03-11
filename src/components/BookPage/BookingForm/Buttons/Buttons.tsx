@@ -17,7 +17,7 @@ export const Buttons: React.FunctionComponent<ButtonsProps> = () => {
             </button>
 
             <button className="btn btn-secondary" type="reset" disabled={disableCancel}>
-                Cancel
+                Clear
             </button>
         </div>
     );

@@ -4,9 +4,11 @@ import { Layout, LayoutProps } from "../Layout";
 import { PageHero } from "../PageHero";
 import classes from "./styled.module.scss";
 
-export interface AboutPageProps extends LayoutProps {}
+export interface AboutPageProps extends LayoutProps {
+    imgUrl: string;
+}
 
-export const AboutPage: React.FunctionComponent<AboutPageProps> = ({ contacts }) => {
+export const AboutPage: React.FunctionComponent<AboutPageProps> = ({ contacts, imgUrl }) => {
     return (
         <Layout contacts={contacts}>
             <PageHero title="About" />
@@ -17,7 +19,7 @@ export const AboutPage: React.FunctionComponent<AboutPageProps> = ({ contacts })
                         <p>Canon Boy</p>
                     </div>
                     <div>
-                        <img src="/images/about-image.png" alt="About" />
+                        <img src={imgUrl} alt="About" />
                     </div>
                 </div>
             </div>

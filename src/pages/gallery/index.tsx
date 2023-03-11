@@ -3,12 +3,12 @@ import { graphcms } from "@/constant";
 import { GALLERY_GQL, CONTACT_GQL } from "@/utils";
 
 export async function getStaticProps() {
-    const { galleries } = await graphcms.request(GALLERY_GQL);
+    const { page } = await graphcms.request(GALLERY_GQL, { first: 1000, skip: 0, stage: "PUBLISHED" });
     const { contactLinks } = await graphcms.request(CONTACT_GQL);
 
     return {
         props: {
-            galleries,
+            galleries: page.edges.map((edge: { node: GalleryProps["galleries"][0] }) => edge.node),
             contacts: contactLinks,
         },
     };
