@@ -10,18 +10,23 @@ import { addBookingFn } from "@/utils";
 import { IBooking } from "@/types";
 import { Buttons } from "./Buttons";
 
-export interface BookingFormProps {}
+export interface BookingFormProps {
+    toggleSuccessState: () => void;
+}
 
-export const BookingForm: React.FunctionComponent<BookingFormProps> = () => {
+export const BookingForm: React.FunctionComponent<BookingFormProps> = ({ toggleSuccessState }) => {
+    const [error, setError] = React.useState<string | null>(null);
+
     const handleSubmit = async (values: IBooking, actions: FormikHelpers<IBooking>) => {
         actions.setSubmitting(true);
+        setError(null);
         try {
             const res = await addBookingFn(values);
             if (res?.statusText?.toLowerCase() === "created") {
-                // show success state
+                toggleSuccessState();
             }
         } catch (error) {
-            // TODO: show error message
+            setError("Something went wrong. Please try again later.");
         } finally {
             actions.setSubmitting(false);
             actions.resetForm();
@@ -45,6 +50,7 @@ export const BookingForm: React.FunctionComponent<BookingFormProps> = () => {
                     <DateAndTimeSelector />
                 </div>
                 <Buttons />
+                {error && <p className={classes.Error}>{error}</p>}
             </Form>
         </Formik>
     );

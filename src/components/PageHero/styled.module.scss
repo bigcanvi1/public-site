@@ -1,14 +1,14 @@
 @import "../../scss/_layout-mixins";
 
 .PageHero {
-    min-height: 448px;
+    min-height: 350px;
     background-color: $hero-bg;
     display: flex;
     align-items: center;
     justify-content: center;
     background-image: url("/images/hero-bg.png");
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center 91%;
     margin-bottom: 82px;
 
     h1 {
@@ -16,5 +16,6 @@
         font-size: 72px;
         color: $color-primary-light-text;
         text-align: center;
+        margin-top: 50px;
     }
 }

@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Input, InputProps } from "@nextui-org/react";
 import { useField } from "formik";
-import isEmpty from "lodash/isEmpty";
 
 export interface TextFieldProps extends Omit<Partial<InputProps>, "contentLeft" | "bordered" | "fullWidth" | "animated" | "contentLeftStyling"> {
     label: string;

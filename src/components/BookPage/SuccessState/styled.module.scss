@@ -1,0 +1,52 @@
+@import "../../../scss/_layout-mixins";
+
+.ImgWrapper {
+    margin-bottom: 44px;
+    display: flex;
+    justify-content: center;
+    img {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+.Title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: $color-primary;
+    text-align: center;
+}
+
+.Subtitle {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: $hero-bg;
+    text-align: center;
+    margin-top: 22px;
+}
+
+.VerifyWrapper {
+    background: #fdf9f4;
+    border-radius: 28px;
+    padding: 36px 40px;
+    margin-top: 38px;
+    margin-bottom: 55px;
+
+    p {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
+        text-align: center;
+        color: $hero-bg;
+        letter-spacing: 0.01em;
+    }
+}
+
+.Button {
+    margin: 0 auto;
+    width: 95px;
+    display: flex;
+    justify-content: center;
+}
