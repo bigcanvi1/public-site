@@ -8,6 +8,10 @@
     border-radius: 32px;
     color: $grey-text;
     box-sizing: border-box;
+
+    @include mobile {
+        padding: 0 16px;
+    }
 }
 .Buttons {
     display: flex;
@@ -16,6 +20,10 @@
     & > :not(:last-child) {
         margin-right: 20px;
     }
+
+    @include mobile {
+        padding: 0 16px;
+    }
 }
 
 .Flexable {
@@ -23,6 +31,14 @@
 
     & > :not(:last-child) {
         margin-right: 32px;
+    }
+
+    @media screen and (max-width: 650px) {
+        flex-direction: column;
+        & > :not(:last-child) {
+            margin-right: 0;
+            margin-bottom: 32px;
+        }
     }
 }
 

@@ -5,6 +5,14 @@
     & > :not(:last-child) {
         margin-right: 32px;
     }
+
+    @media screen and (max-width: 650px) {
+        flex-direction: column;
+        & > :not(:last-child) {
+            margin-right: 0;
+            margin-bottom: 32px;
+        }
+    }
 }
 
 .PricingItem {

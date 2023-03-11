@@ -10,8 +10,10 @@
         align-items: center;
         margin-top: 104px;
 
-        max-width: 300px;
-        margin: 0 auto;
+        @media screen and (max-width: 720px) {
+            max-width: 300px;
+            margin: 0 auto;
+        }
     }
 
     @include mobile {
