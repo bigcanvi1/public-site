@@ -7,7 +7,7 @@ import { SuccessState } from "./SuccessState";
 export interface BookPageProps extends LayoutProps {}
 
 export const BookPage: React.FunctionComponent<BookPageProps> = ({ contacts }) => {
-    const [isSuccess, setIsSuccess] = React.useState(true);
+    const [isSuccess, setIsSuccess] = React.useState(false);
     const toggleSuccess = () => setIsSuccess((prevState) => !prevState);
 
     return (
