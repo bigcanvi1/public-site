@@ -3,22 +3,22 @@ import { Booking, Confirm, PhotoShoot, DigitalCopies } from "../../../assets/ico
 export const STEPS = [
     {
         title: "Book",
-        description: "Our friendly team is here to help.",
+        description: "Enter info and availability.",
         Icon: Booking,
     },
     {
         title: "Confirm",
-        description: "Our friendly team is here to help.",
+        description: "Verify info and make payment.",
         Icon: Confirm,
     },
     {
         title: "Photoshoot",
-        description: "Our friendly team is here to help.",
+        description: "Lets capture the great moments.",
         Icon: PhotoShoot,
     },
     {
         title: "Digital Copies",
-        description: "Our friendly team is here to help.",
+        description: "Get Images delivered digitally.",
         Icon: DigitalCopies,
     },
 ];

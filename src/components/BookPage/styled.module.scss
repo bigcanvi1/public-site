@@ -1,4 +1,8 @@
 .BookWrapper {
     position: relative;
     margin-bottom: 100px;
+
+    @media screen and (max-width: 641px) {
+        margin-bottom: 0px;
+    }
 }

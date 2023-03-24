@@ -5,6 +5,10 @@
     flex-flow: row wrap;
     justify-content: space-between;
     margin-top: 88px;
+
+    @include mobile {
+        margin-top: 0px;
+    }
 }
 
 .StepImage {
@@ -14,6 +18,19 @@
 }
 .Steps {
     margin-bottom: 110px;
+
+    @include mobile {
+        margin-bottom: 70px;
+    }
+
+    @media screen and (max-width: 991px) {
+        max-width: 600px;
+        margin: 40px auto;
+    }
+    @media screen and (max-width: 600px) {
+        margin-bottom: 0px;
+    }
+
     &__Items {
         flex: 1;
         display: flex;
@@ -22,14 +39,17 @@
         align-items: flex-end;
         margin-top: 104px;
 
-        @media screen and (max-width: 720px) {
-            max-width: 300px;
-            margin: 0 auto;
+        @include mobile {
+            margin-top: 70px;
+            padding: 0 16px;
         }
-    }
-
-    @include mobile {
-        padding: 63px 16px;
+        @media screen and (max-width: 991px) {
+            max-width: 600px;
+            margin: 70px auto;
+        }
+        @media screen and (max-width: 600px) {
+            max-width: 260px;
+        }
     }
 }
 
@@ -53,5 +73,6 @@
 
     @include mobile {
         font-size: 42px;
+        margin-top: 70px;
     }
 }

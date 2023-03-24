@@ -61,19 +61,22 @@
             background-color: $hero-bg;
 
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             justify-content: center;
-            padding-left: 18px;
 
             li {
                 &:not(:last-child) {
                     margin-right: 0;
                 }
                 &:not(:last-child) {
-                    margin-bottom: 28px;
+                    margin-bottom: 40px;
                 }
+
+                padding-bottom: 32px;
+                border-bottom: 1px solid #3a3a3a;
+                width: 90%;
                 a {
-                    font-size: 32px;
+                    font-size: 70px;
                     color: $color-primary;
                 }
             }
@@ -96,6 +99,12 @@
         transform: scale(0.4) translate(-226px, -42px);
         // border: 1px solid $color-primary;
     }
+
+    @include mobile {
+        svg {
+            transform: scale(0.4) translate(-186px, -42px);
+        }
+    }
 }
 
 .FacadeButton {
@@ -110,6 +119,10 @@
     cursor: pointer;
     margin-right: 8px;
     z-index: 4000;
+
+    &.FacadeButtonOpen {
+        transform: scale(2) translate(-16%, 2px);
+    }
 }
 
 .main_navigation__hamburger {
