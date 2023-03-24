@@ -4,6 +4,7 @@ import Head from "next/head";
 import { Manrope } from "@next/font/google";
 import Router from "next/router";
 import { PageLoader } from "../components/PageLoader";
+import { CanviPageLoader } from "../components/CanviPageLoader";
 import { NextUIProvider } from "@nextui-org/react";
 
 import "../scss/master.scss";
@@ -22,13 +23,19 @@ export default function App({ Component, pageProps }: AppProps) {
             setLoading(false);
         };
 
+        const slowedEnd = () => {
+            setTimeout(() => {
+                setLoading(false);
+            }, 2000);
+        };
+
         Router.events.on("routeChangeStart", start);
-        Router.events.on("routeChangeComplete", end);
+        Router.events.on("routeChangeComplete", slowedEnd);
         Router.events.on("routeChangeError", end);
 
         return () => {
             Router.events.off("routeChangeStart", start);
-            Router.events.off("routeChangeComplete", end);
+            Router.events.off("routeChangeComplete", slowedEnd);
             Router.events.off("routeChangeError", end);
         };
     }, []);
@@ -42,7 +49,9 @@ export default function App({ Component, pageProps }: AppProps) {
                 <link rel="icon" href="/favicon.png" />
             </Head>
 
+            {loading && <CanviPageLoader />}
             {loading && <PageLoader />}
+
             <div className={`${font.className} app-wrapper`}>
                 <NextUIProvider>
                     <Component {...pageProps} />

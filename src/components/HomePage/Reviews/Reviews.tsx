@@ -7,62 +7,35 @@ import { Pagination, FreeMode } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 
-export interface ReviewsProps {}
+export interface ReviewsProps {
+    reviews: Array<{ id: string; quote: string; author: string }>;
+}
 
-export const Reviews: React.FunctionComponent<ReviewsProps> = () => {
+export const Reviews: React.FunctionComponent<ReviewsProps> = ({ reviews }) => {
     return (
         <div className="col-12 centered collapse-mobile reviews overflow-visible">
-            {/* <div className={classes.Reviews}> */}
-            <Swiper
+            <div className={classes.Reviews}>
+                {/* <Swiper
                 slidesPerView={"auto"}
-                spaceBetween={100}
+                spaceBetween={32}
                 pagination={{
                     clickable: true,
                 }}
                 modules={[FreeMode, Pagination]}
                 className={classes.Reviews}
-            >
-                <SwiperSlide>
-                    <ReviewsItem />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ReviewsItem />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ReviewsItem />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ReviewsItem />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ReviewsItem />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ReviewsItem />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ReviewsItem />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ReviewsItem />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ReviewsItem />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ReviewsItem />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ReviewsItem />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ReviewsItem />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ReviewsItem />
-                </SwiperSlide>
-            </Swiper>
-            {/* </div> */}
+                centeredSlides={true}
+            > */}
+
+                {reviews.map(({ id, quote, author }) => {
+                    return (
+                        // <SwiperSlide key={id}>
+                        <ReviewsItem quote={quote} author={author} key={id} />
+                        // </SwiperSlide>
+                    );
+                })}
+
+                {/* </Swiper> */}
+            </div>
         </div>
     );
 };

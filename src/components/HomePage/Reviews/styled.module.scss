@@ -1,7 +1,11 @@
 @import "../../../scss/_layout-mixins";
 
 .Reviews {
+    width: 100%;
     display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
 
     margin: 92px 0 97px 0;
 }

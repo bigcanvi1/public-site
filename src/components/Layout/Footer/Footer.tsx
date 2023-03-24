@@ -2,6 +2,7 @@ import * as React from "react";
 import classes from "./Footer.module.scss";
 import { COMMON_EXTERNAL_LINK_PROPS } from "@/constant";
 import { Twitter, Facebook, LinkedIn, Mail, Insta } from "@/assets/icons";
+import { useRouter } from "next/router";
 
 const ICON_MAP = {
     EMAIL: Mail,
@@ -16,13 +17,17 @@ export interface FooterProps {
 }
 
 export const Footer: React.FunctionComponent<FooterProps> = ({ contacts }) => {
+    const router = useRouter();
+
     const date = new Date();
     const year = date.getFullYear();
 
+    const showDarkFooter = router.pathname === "/" || router.pathname === "/gallery";
+
     return (
-        <footer>
+        <footer className={[classes.Footer, showDarkFooter ? classes.Dark : ""].join(" ")}>
             <div className={`col-12 centred collapse-mobile`}>
-                <div className={classes.Footer}>
+                <div className={classes.FooterWrapper}>
                     <p>Big Canvi {year}</p>
 
                     <div className={classes.Contacts}>
@@ -30,7 +35,7 @@ export const Footer: React.FunctionComponent<FooterProps> = ({ contacts }) => {
                             const Icon = ICON_MAP[type];
                             return (
                                 <a key={id} href={url} {...COMMON_EXTERNAL_LINK_PROPS} aria-label={type}>
-                                    <Icon />
+                                    <Icon className={type === "EMAIL" ? classes.mail : ""} />
                                 </a>
                             );
                         })}

@@ -1,15 +1,20 @@
 @import "../../../scss/_layout-mixins";
 
 .Footer {
-    width: 100%;
-    padding: 20px 10px;
+    min-height: 174px;
     margin-top: auto;
-    border-top: 1px solid $grey1;
+    display: flex;
+    align-items: flex-end;
+}
+.FooterWrapper {
+    width: 100%;
+    padding: 20px 0;
+    border-top: 1px solid #eaecf0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     p {
-        color: $grey2;
+        color: #888888;
     }
 }
 
@@ -21,5 +26,27 @@
         &:not(:last-child) {
             margin-right: 24px;
         }
+
+        &:hover {
+            svg {
+                transition: all 0.3s ease-out;
+                path {
+                    fill: $color-primary;
+                }
+
+                path.mail {
+                    fill: none;
+                    stroke: $color-primary;
+                }
+            }
+        }
+    }
+}
+
+.Dark {
+    background-color: $hero-bg;
+
+    .FooterWrapper {
+        border-top: 1px solid #3a3a3a !important;
     }
 }

@@ -15,7 +15,7 @@ export const PRICING_ITEMS: Array<Omit<PricingItemProps, "handleChange" | "isChe
     {
         type: "Basic",
         price: 200,
-        perks: ["2 hrs", "Studio Shoot", "8 Pro Retouched selected Images"],
+        perks: ["2 hrs", "Studio Shoot", "8 Pro Retouched of selected Images"],
         value: PLANS.BASIC,
     },
 ];

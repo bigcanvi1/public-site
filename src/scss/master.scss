@@ -17,7 +17,8 @@
 }
 .reviews {
     .swiper-slide {
-        width: 300px;
+        width: 316px;
+        box-sizing: border-box;
         &:not(:last-child) {
             margin-right: 32px;
         }

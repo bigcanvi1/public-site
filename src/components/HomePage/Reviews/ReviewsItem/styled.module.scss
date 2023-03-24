@@ -1,26 +1,32 @@
 @import "../../../../scss/_layout-mixins";
 
 .ReviewItem {
-    background-color: $grey1;
+    background-color: $grey3;
     border-radius: 32px;
-    width: 300px;
+    box-sizing: border-box;
     padding: 32px;
-
-    &:not(:last-child) {
-        margin-right: 32px;
-    }
+    // width: 316px;
+    width: getwidth(3, 1.5);
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
 
     &__Stars {
         margin-bottom: 16px;
         font-size: 28px;
         color: $color-primary;
+        & svg {
+            &:not(:last-child) {
+                margin-right: 6px;
+            }
+        }
     }
 
     &__Text {
         font-weight: 400;
         font-size: 16px;
         line-height: 150%;
-        color: $black;
+        color: #1e1f27;
         margin-bottom: 16px;
         width: 90%;
     }
@@ -30,5 +36,6 @@
         line-height: 150%;
         color: $grey-text;
         font-weight: 400;
+        margin-top: auto;
     }
 }

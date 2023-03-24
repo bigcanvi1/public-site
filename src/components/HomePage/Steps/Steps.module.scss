@@ -1,13 +1,25 @@
 @import "../../../scss/_layout-mixins";
 
-.Steps {
-    padding: 93px 0;
+.StepParentWrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-top: 88px;
+}
 
+.StepImage {
+    flex: 2;
+    max-width: 609px;
+    margin-right: auto;
+}
+.Steps {
+    margin-bottom: 110px;
     &__Items {
+        flex: 1;
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
         margin-top: 104px;
 
         @media screen and (max-width: 720px) {
@@ -27,6 +39,7 @@
     font-size: 60px;
     line-height: 130%;
     text-align: center;
+    margin-top: 83px;
 
     &__Author {
         font-weight: 400;
