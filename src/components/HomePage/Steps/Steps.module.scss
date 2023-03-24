@@ -4,11 +4,6 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    margin-top: 88px;
-
-    @include mobile {
-        margin-top: 0px;
-    }
 }
 
 .StepImage {
@@ -17,18 +12,8 @@
     margin-right: auto;
 }
 .Steps {
-    margin-bottom: 110px;
-
-    @include mobile {
-        margin-bottom: 70px;
-    }
-
     @media screen and (max-width: 991px) {
         max-width: 600px;
-        margin: 40px auto;
-    }
-    @media screen and (max-width: 600px) {
-        margin-bottom: 0px;
     }
 
     &__Items {

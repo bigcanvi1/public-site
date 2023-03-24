@@ -15,14 +15,14 @@ export const Gallery: React.FunctionComponent<GalleryProps> = ({ galleries }) =>
 
     return (
         <div className="col-12 centered collapse-mobile">
-            {/* <div className={classes.Gallery}> */}
-            <GalleryImages galleries={filteredGalleries} />
-            <div className={classes.CTA}>
-                <Link href={UI_ROUTES.GALLERY} className="btn btn-secondary">
-                    View Gallery
-                </Link>
+            <div className={classes.Gallery}>
+                <GalleryImages galleries={filteredGalleries} />
+                <div className={classes.CTA}>
+                    <Link href={UI_ROUTES.GALLERY} className="btn btn-secondary">
+                        View Gallery
+                    </Link>
+                </div>
             </div>
-            {/* </div> */}
         </div>
     );
 };
