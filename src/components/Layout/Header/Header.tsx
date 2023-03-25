@@ -21,9 +21,9 @@ export const Header: React.FunctionComponent = () => {
                 </div>
 
                 <button onClick={toggleHamburger} className={[classes.FacadeButton, `${isOpenHamburger ? classes.FacadeButtonOpen : ""}`].join(" ")}>
-                    <div role="button" aria-label="menu" className={[classes.main_navigation__hamburger, `${isOpenHamburger ? classes.hamOpen : ""}`].join(" ")}>
+                    <span role="button" aria-label="menu" className={[classes.main_navigation__hamburger, `${isOpenHamburger ? classes.hamOpen : ""}`].join(" ")}>
                         &nbsp;
-                    </div>
+                    </span>
                 </button>
 
                 <nav className={[classes.Nav, isOpenHamburger ? classes.open : ""].join(" ")}>
