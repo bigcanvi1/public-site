@@ -5,13 +5,19 @@ import isEmpty from "lodash/isEmpty";
 import { GalleryImages, GalleryImagesProps } from "../../Gallery/GalleryImages";
 import Link from "next/link";
 import { UI_ROUTES } from "@/constant";
+import { useMediaQuery } from "@/hooks";
 
 export interface GalleryProps extends GalleryImagesProps {}
 
 export const Gallery: React.FunctionComponent<GalleryProps> = ({ galleries }) => {
+    const isMobile = useMediaQuery("(max-width: 600px)");
+
     if (isEmpty(galleries)) return null;
+
+    const max = isMobile ? 4 : 12;
+
     // filter falsey and max of 12 images
-    const filteredGalleries = galleries.filter((gallery) => gallery.entry).slice(0, 12);
+    const filteredGalleries = galleries.filter((gallery) => gallery.entry).slice(0, max);
 
     return (
         <div className="col-12 centered collapse-mobile">
@@ -26,3 +32,5 @@ export const Gallery: React.FunctionComponent<GalleryProps> = ({ galleries }) =>
         </div>
     );
 };
+
+export default Gallery;

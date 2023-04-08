@@ -3,7 +3,9 @@ import { Layout, LayoutProps } from "../Layout";
 import { HeroSection } from "./HeroSection";
 import { Steps } from "./Steps";
 import { Reviews, ReviewsProps } from "./Reviews";
-import { Gallery, GalleryProps } from "./Gallery";
+import { GalleryProps } from "./Gallery";
+import dynamic from "next/dynamic";
+const Gallery = dynamic(() => import("./Gallery/Gallery"), { ssr: false });
 
 export interface HomePageProps extends GalleryProps, LayoutProps, ReviewsProps {}
 

@@ -23,7 +23,7 @@ export interface GalleryImagesProps {
 export const GalleryImages: React.FunctionComponent<GalleryImagesProps> = ({ galleries, columnsCountBreakPoints, gutter }) => {
     return (
         <div className={classes.MansoryLayout}>
-            <ResponsiveMasonry columnsCountBreakPoints={columnsCountBreakPoints ?? { 350: 1, 500: 2, 650: 3, 900: 4 }}>
+            <ResponsiveMasonry columnsCountBreakPoints={columnsCountBreakPoints ?? { 350: 1, 500: 2, 650: 2, 900: 4 }}>
                 <Masonry gutter={gutter ?? "30px"}>
                     {galleries.map((gallery) => (
                         <div key={gallery.id} className={classes.MasonryItem}>

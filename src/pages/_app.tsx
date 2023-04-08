@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
         const slowedEnd = () => {
             setTimeout(() => {
                 setLoading(false);
-            }, 2000);
+            }, 2000); // 2 seconds
         };
 
         Router.events.on("routeChangeStart", start);
