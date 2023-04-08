@@ -3,8 +3,16 @@ import { graphcms } from "@/constant";
 import { CONTACT_GQL, ABOUT_GQL } from "@/utils";
 
 export async function getStaticProps() {
-    const { contactLinks } = await graphcms.request(CONTACT_GQL);
-    const { aboutContents } = await graphcms.request(ABOUT_GQL);
+    const { contactLinks } = await graphcms.request<{
+        contactLinks: AboutPageProps["contacts"];
+    }>(CONTACT_GQL);
+    const { aboutContents } = await graphcms.request<{
+        aboutContents: Array<{
+            image: {
+                url: string;
+            };
+        }>;
+    }>(ABOUT_GQL);
 
     return {
         props: {
