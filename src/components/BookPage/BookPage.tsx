@@ -15,7 +15,9 @@ export const BookPage: React.FunctionComponent<BookPageProps> = ({ contacts }) =
             <div className={classes.BookWrapper}>
                 <PageHero title="Booking" />
 
-                <div className="col-6 centered collapse-mobile">{isSuccess ? <SuccessState toggleSuccessState={toggleSuccess} /> : <BookingForm toggleSuccessState={toggleSuccess} />}</div>
+                <div className={classes.Wrapper}>
+                    <div className="col-6 centered collapse-mobile">{isSuccess ? <SuccessState toggleSuccessState={toggleSuccess} /> : <BookingForm toggleSuccessState={toggleSuccess} />}</div>
+                </div>
             </div>
         </Layout>
     );

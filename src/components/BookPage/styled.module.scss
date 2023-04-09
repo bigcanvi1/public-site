@@ -6,3 +6,11 @@
         margin-bottom: 0px;
     }
 }
+
+.Wrapper {
+    margin-top: 60px;
+
+    @media screen and (max-width: 600px) {
+        margin-top: 40px;
+    }
+}

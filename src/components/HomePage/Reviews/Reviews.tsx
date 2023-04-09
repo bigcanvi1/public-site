@@ -14,8 +14,11 @@ export interface ReviewsProps {
 export const Reviews: React.FunctionComponent<ReviewsProps> = ({ reviews }) => {
     return (
         <div className="col-12 centered collapse-mobile reviews overflow-visible">
-            <div className={classes.Reviews}>
-                {/* <Swiper
+            <div className={classes.Wrapper}>
+                <h2 className={classes.Title}>Reviews</h2>
+
+                <div className={classes.Reviews}>
+                    {/* <Swiper
                 slidesPerView={"auto"}
                 spaceBetween={32}
                 pagination={{
@@ -26,15 +29,16 @@ export const Reviews: React.FunctionComponent<ReviewsProps> = ({ reviews }) => {
                 centeredSlides={true}
             > */}
 
-                {reviews.map(({ id, quote, author }) => {
-                    return (
-                        // <SwiperSlide key={id}>
-                        <ReviewsItem quote={quote} author={author} key={id} />
-                        // </SwiperSlide>
-                    );
-                })}
+                    {reviews.map(({ id, quote, author }) => {
+                        return (
+                            // <SwiperSlide key={id}>
+                            <ReviewsItem quote={quote} author={author} key={id} />
+                            // </SwiperSlide>
+                        );
+                    })}
 
-                {/* </Swiper> */}
+                    {/* </Swiper> */}
+                </div>
             </div>
         </div>
     );

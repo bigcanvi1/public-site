@@ -1,29 +1,36 @@
 @import "../../scss/_layout-mixins";
 
+.Wrapper {
+    background-color: $hero-bg;
+}
+
 .PageHero {
-    min-height: 350px;
+    min-height: 360px;
     background-color: $hero-bg;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-image: url("/images/hero-bg.png");
+    background-image: url("/images/gallery-hero.png");
     background-repeat: no-repeat;
-    background-position: center 91%;
-    margin-bottom: 82px;
-    @include mobile {
-        min-height: 250px;
-        margin-bottom: 42px;
+    background-position: center -10%;
+
+    @media screen and (max-width: 641px) {
+        min-height: 300px;
     }
 
     h1 {
         font-weight: 700;
         font-size: 72px;
-        color: $color-primary-light-text;
-        text-align: center;
-        margin-top: 50px;
+        color: $color-primary;
+        margin-top: 68px;
+        font-size: 97.9794px;
+        line-height: 130%;
 
         @include mobile {
-            font-size: 42px;
+            padding-left: 16px;
+        }
+
+        @media screen and (max-width: 641px) {
+            font-size: 66px;
         }
     }
 }

@@ -1,7 +1,7 @@
 import * as React from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { Manrope } from "@next/font/google";
+import { Manrope } from "next/font/google";
 import Router from "next/router";
 import { PageLoader } from "../components/PageLoader";
 import { CanviPageLoader } from "../components/CanviPageLoader";

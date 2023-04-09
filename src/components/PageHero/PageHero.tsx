@@ -8,9 +8,11 @@ export interface PageHeroProps {
 
 export const PageHero: React.FunctionComponent<PageHeroProps> = ({ title, className }) => {
     return (
-        <div className={`${classes.PageHero} ${className || ""}`}>
+        <div className={classes.Wrapper}>
             <div className="col-12 centered collapse-mobile">
-                <h1>{title}</h1>
+                <div className={`${classes.PageHero} ${className || ""}`}>
+                    <h1>{title}</h1>
+                </div>
             </div>
         </div>
     );
