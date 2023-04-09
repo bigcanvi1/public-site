@@ -15,7 +15,7 @@ export const Reviews: React.FunctionComponent<ReviewsProps> = ({ reviews }) => {
     return (
         <div className="col-12 centered collapse-mobile reviews overflow-visible">
             <div className={classes.Wrapper}>
-                <h2 className={classes.Title}>Reviews</h2>
+                <h2 className={classes.Title}>Kind Words</h2>
 
                 <div className={classes.Reviews}>
                     {/* <Swiper
